@@ -6,7 +6,7 @@
 #    By: imontero <imontero@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/21 16:14:07 by imontero          #+#    #+#              #
-#    Updated: 2023/08/24 18:05:00 by imontero         ###   ########.fr        #
+#    Updated: 2023/08/24 22:22:19 by imontero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,10 +20,11 @@ LIBFT = 			libft.a
 
 SRC_FILES = 		main.c \
 					error.c \
-					check_arr.c \
+					checks.c \
 					moves.c \
 					moves2.c \
 					moves3.c \
+					algo.c \
 
 INCLUDE = 			push_swap.h
 

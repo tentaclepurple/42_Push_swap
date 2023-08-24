@@ -6,7 +6,7 @@
 /*   By: imontero <imontero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 13:49:29 by imontero          #+#    #+#             */
-/*   Updated: 2023/08/24 19:03:33 by imontero         ###   ########.fr       */
+/*   Updated: 2023/08/24 22:42:26 by imontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,8 @@ int	main(int argc, char **argv)
 	}
 	init_parse(argv, &ps);
 	print_stacks(&ps);
-	pb(&ps, 1);
-	pb(&ps, 1);
-	pb(&ps, 1);
-	rrr(&ps, 1);
+	init_sort(&ps);
+	
 	print_stacks(&ps);
 	
 	free(ps.a);
@@ -40,6 +38,16 @@ int	main(int argc, char **argv)
 	return (0);
 }
 
+void	init_sort(t_ps *ps)
+{
+	if (!check_order(ps))
+	{
+		if (ps->asize == 2)
+			sa(ps, 1);
+		if (ps->asize == 3)
+			sort_three(ps);
+	}
+}
 int	init_parse(char **argv, t_ps *ps)
 {
 	check_nums(argv, ps);
@@ -47,7 +55,6 @@ int	init_parse(char **argv, t_ps *ps)
 	if (ps->arg_flag == 1)
 		free_argv(argv);
 	check_repeats_limits(ps);
-	
 	return (1);
 }
 
@@ -69,15 +76,27 @@ void	fill_stack(char **argv, t_ps *ps)
 void	print_stacks(t_ps *ps)
 {
 	int	i;
+	int	size;
 
 	i = -1;
-	
-	printf("%8s %8s\n", "A", "B");
-	printf("------------------\n");
-	printf("%-s %3i %8i\n", "size", ps->asize, ps->bsize);
-	printf("------------------\n");
-	while(++i < ps->asize + ps->bsize)
-		printf("%8li %8li\n", ps->a[i], ps->b[i]);
-	printf("------------------\n");
+	if (ps->asize > ps->bsize)
+		size = ps->asize;
+	else
+		size = ps->bsize;
+	printf("\n");	
+	printf("--------------------------\n");
+	printf("%12s %12s\n", "A", "B");
+	printf("--------------------------\n");
+	printf("%-s %7i %12i\n", "size", ps->asize, ps->bsize);
+	printf("--------------------------\n");
+	while(++i < size)
+		printf("%12li %12li\n", ps->a[i], ps->b[i]);
+	printf("--------------------------\n");
+	if (check_order(ps))	
+		printf("SORTED %i\n", check_order(ps));
+	else
+		printf(" NOT SORTED %i\n", check_order(ps));
+	printf("--------------------------\n");
+
 	printf("\n");
 }
