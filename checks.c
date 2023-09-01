@@ -6,7 +6,7 @@
 /*   By: imontero <imontero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 16:54:49 by imontero          #+#    #+#             */
-/*   Updated: 2023/08/24 22:38:51 by imontero         ###   ########.fr       */
+/*   Updated: 2023/08/31 17:43:12 by imontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,10 @@ int	check_repeats_limits(t_ps *ps)
 }
 
 /* 
-	Comprueba si el array A esta ordenado.
+	Comprueba si el array A esta ordenado de menor a mayor.
 	devuelve 1 si esta ordenado y 0 si no.	
  */
-int	check_order(t_ps *ps)
+int	is_order_a(t_ps *ps)
 {
 	int	n;
 	
@@ -74,6 +74,23 @@ int	check_order(t_ps *ps)
 	while (n < ps->asize - 1)
 	{
 		if (ps->a[n] > ps->a[n + 1])
+			return (0);
+		n++;
+	}
+	return (1);
+}
+/* 
+	Comprueba si el array B esta ordenado de mayor a menor.
+	devuelve 1 si esta ordenado y 0 si no.	
+ */
+int	is_order_b(t_ps *ps)
+{
+	int	n;
+	
+	n = 0;
+	while (n < ps->bsize - 1)
+	{
+		if (ps->b[n] < ps->b[n + 1])
 			return (0);
 		n++;
 	}

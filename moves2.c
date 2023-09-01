@@ -6,12 +6,16 @@
 /*   By: imontero <imontero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 10:52:34 by imontero          #+#    #+#             */
-/*   Updated: 2023/08/24 18:47:29 by imontero         ###   ########.fr       */
+/*   Updated: 2023/09/01 13:43:01 by imontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/* 	flag recibe 0 o 1 para imprimir el movimiento
+	si no lo imrime es porque hay un movimiento doble
+	que imprimirá su propio movimiento ss, rr, rrr 
+*/
 void	ra(t_ps *ps, int flag)
 {
 	long	tmp;
@@ -31,9 +35,16 @@ void	ra(t_ps *ps, int flag)
 	else
 		error("Movement error ra", ps);
 	if (flag)
-			ft_printf("ra\n");	
+	{
+		ft_printf("ra\n");	
+		ps->count++;
+	}
 }
 
+/* 	flag recibe 0 o 1 para imprimir el movimiento
+	si no lo imrime es porque hay un movimiento doble
+	que imprimirá su propio movimiento ss, rr, rrr 
+*/
 void	rb(t_ps *ps, int flag)
 {
 	long	tmp;
@@ -53,9 +64,16 @@ void	rb(t_ps *ps, int flag)
 	else
 		error("Movement error rb", ps);
 	if (flag)
+	{
 			ft_printf("rb\n");	
+			ps->count++;
+	}
 }
 
+/* 	flag recibe 0 o 1 para imprimir el movimiento
+	si no lo imrime es porque hay un movimiento doble
+	que imprimirá su propio movimiento ss, rr, rrr 
+*/
 void	rra(t_ps *ps, int flag)
 {
 	long	tmp;
@@ -72,9 +90,16 @@ void	rra(t_ps *ps, int flag)
 	}
 	ps->a[0] = tmp;
 	if (flag)
-			ft_printf("rra\n");	
+	{
+		ft_printf("rra\n");
+		ps->count++;		
+	}	
 }
 
+/* 	flag recibe 0 o 1 para imprimir el movimiento
+	si no lo imrime es porque hay un movimiento doble
+	que imprimirá su propio movimiento ss, rr, rrr 
+*/
 void	rrb(t_ps *ps, int flag)
 {
 	long	tmp;
@@ -91,5 +116,8 @@ void	rrb(t_ps *ps, int flag)
 	}
 	ps->b[0] = tmp;
 	if (flag)
-			ft_printf("rrb\n");	
+	{
+		ft_printf("rrb\n");	
+		ps->count++;	
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: imontero <imontero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 10:52:34 by imontero          #+#    #+#             */
-/*   Updated: 2023/08/24 18:52:30 by imontero         ###   ########.fr       */
+/*   Updated: 2023/09/01 14:39:36 by imontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 /* 	flag recibe 0 o 1 para imprimir el movimiento
 	si no lo imrime es porque hay un movimiento doble
-	que imprimirá su propio movimiento ss, rr, rrr */
-
+	que imprimirá su propio movimiento ss, rr, rrr 
+*/
 void	sa(t_ps *ps, int flag)
 {
 	long	tmp;
@@ -26,9 +26,16 @@ void	sa(t_ps *ps, int flag)
 	ps->a[0] = ps->a[1];
 	ps->a[1] = tmp;
 	if (flag)
+	{
 		ft_printf("sa\n");
+		ps->count++;		
+	}
 }
 
+/* 	flag recibe 0 o 1 para imprimir el movimiento
+	si no lo imrime es porque hay un movimiento doble
+	que imprimirá su propio movimiento ss, rr, rrr 
+*/
 void	sb(t_ps *ps, int flag)
 {
 	long	tmp;
@@ -39,14 +46,23 @@ void	sb(t_ps *ps, int flag)
 	ps->b[0] = ps->b[1];
 	ps->b[1] = tmp;
 	if (flag)
+	{
 		ft_printf("sb\n");
+		ps->count++;
+	}
 }
 
+/* 	flag recibe 0 o 1 para imprimir el movimiento
+	si no lo imrime es porque hay un movimiento doble
+	que imprimirá su propio movimiento ss, rr, rrr 
+*/
 void	pb(t_ps *ps, int flag)
 {
 	int	n;
 	
-	n = ++ps->bsize;
+	n = ps->bsize++;
+	//ps->bsize++;
+	//printf("n: %i, asize: %i, bsize: %i, \n", n, ps->asize, ps->bsize);
 	if (ps->asize > 0)
 	{
 		while (n > 0)
@@ -63,12 +79,19 @@ void	pb(t_ps *ps, int flag)
 		}
 		ps->a[ps->asize] = 0;
 		if (flag)
+		{
 			ft_printf("pb\n");
+			ps->count++;			
+		}
 	}
 	else
 		error("Movement error pb", ps);
 }
 
+/* 	flag recibe 0 o 1 para imprimir el movimiento
+	si no lo imrime es porque hay un movimiento doble
+	que imprimirá su propio movimiento ss, rr, rrr 
+*/
 void	pa(t_ps *ps, int flag)
 {
 	int	n;
@@ -90,7 +113,10 @@ void	pa(t_ps *ps, int flag)
 		}	
 		ps->b[ps->bsize] = 0;
 		if (flag)
+		{
 			ft_printf("pa\n");	
+			ps->count++;
+		}
 	}
 	else
 		error("Movement error pa", ps);

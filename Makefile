@@ -6,7 +6,7 @@
 #    By: imontero <imontero@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/21 16:14:07 by imontero          #+#    #+#              #
-#    Updated: 2023/08/24 22:22:19 by imontero         ###   ########.fr        #
+#    Updated: 2023/09/01 14:15:31 by imontero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,17 +14,22 @@ NAME = 				push_swap
 
 CC = 				gcc
 
-CFLAGS =			-g3 -Wall -Werror -Wextra #-fsanitize=address
+CFLAGS =			-g3 -Wall -Werror -Wextra -fsanitize=address
 
 LIBFT = 			libft.a
 
 SRC_FILES = 		main.c \
 					error.c \
 					checks.c \
+					checks2.c \
 					moves.c \
 					moves2.c \
 					moves3.c \
 					algo.c \
+					algo2.c \
+					costs.c \
+					costs2.c \
+					costs3.c \
 
 INCLUDE = 			push_swap.h
 
