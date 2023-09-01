@@ -95,3 +95,22 @@ void	move_cheapest_aux3(t_ps *ps, int ch)
 	}
 }
 
+void	final_order_b(t_ps *ps)
+{
+	find_max_min_b(ps);
+	while (ps->bmaxidx != 0)
+	{
+
+		if (ps->bmaxidx < (ps->bsize / 2))
+			rb(ps, 1);
+		else
+			rrb(ps, 1);
+		find_max_min_b(ps);
+	}
+}
+
+void	return_to_a(t_ps *ps)
+{
+	while (ps->bsize > 0)
+		pa(ps, 1);
+}

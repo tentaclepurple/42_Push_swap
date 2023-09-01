@@ -96,7 +96,7 @@ void	pa(t_ps *ps, int flag)
 {
 	int	n;
 	
-	n = ++ps->asize;
+	n = ps->asize++;
 	if (ps->bsize > 0)
 	{
 		while (n > 0)

@@ -1,56 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   algo2.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imontero <imontero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/23 16:54:49 by imontero          #+#    #+#             */
-/*   Updated: 2023/08/31 19:07:32 by imontero         ###   ########.fr       */
+/*   Created: 2023/09/01 12:50:33 by imontero          #+#    #+#             */
+/*   Updated: 2023/09/01 13:11:07 by imontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	error_exit(char **argv, t_ps *ps)
+void	sort_five(t_ps *ps)
 {
-	ft_printf("Error\n");
-	if (ps->arg_flag == 1)
-		free_argv(argv);
-	exit(1);
+	//int	i;
+
+//	i = 0;
+	find_max_min_a(ps);
+	find_second_min_a(ps);
+	printf("%li %li\n", ps->amin, ps->a2min);
 }
 
-void	free_argv(char **argv)
+void	find_second_min_a(t_ps *ps)
 {
 	int	i;
 
 	i = 0;
-	while (argv[i])
+	ps->a2min = INT_MAX;
+		while (i < ps->asize)
 	{
-		free(argv[i]);
-		i++;
+		if (ps->a[i] < ps->a2min && ps->a[i] != ps->amin)
+			ps->a2min = ps->a[i];
 	}
-	free(argv);
-}
-
-void	error(char *s, t_ps *ps)
-{
-	ft_printf("%s\n", s);
-	free_stacks(ps);
-	exit(1);
-}
-
-void	free_stacks(t_ps *ps)
-{
-	int	i;
-	
-	i = 0;
-	free(ps->a);
-	free(ps->b);
-	while (i < ps->totalsize)
-	{
-		free(ps->costs[i]);
-		i++;
-	}
-	free(ps->costs);
+	i++;
 }

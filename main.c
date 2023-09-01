@@ -16,7 +16,7 @@ int	main(int argc, char **argv)
 {
 	t_ps	ps;
 	
-	//ft_memset(&ps, 0, sizeof(struct s_ps));
+	ft_memset(&ps, 0, sizeof(struct s_ps));
 	ps.arg_flag = 0;
 	if (argc == 1 || (2 == argc && !argv[1][0]))		
 		return (ft_printf("\n"));
@@ -27,11 +27,9 @@ int	main(int argc, char **argv)
 		argv = ft_split(argv[0], ' ');
 	}
 	init_parse(argv, &ps);
-	print_stacks(&ps);
+	//print_stacks(&ps);
 	init_sort(&ps);
 //	print_stacks(&ps);
-	
-	
 	//printf("%i\n", is_order_b(&ps));
 
 	//printf("Max: %li--- Min: %li", ps.amax, ps.amin);
@@ -39,15 +37,10 @@ int	main(int argc, char **argv)
 	// 22 20 18 16 14 12 10 8 6 4 2
 	// 14 16 18 20 22 2 4 6 8 10 12
 	
-
 	//printf("Max: %li, i: %i --- Min: %li, i: %i\n", ps.bmax, ps.bmaxidx, ps.bmin, ps.bminidx);
 	//printf("target %i\n", find_target_index_in_b(-13, &ps));
-	
 
-
-	
-	
-	print_stacks(&ps);
+	//print_stacks(&ps);
 	free_stacks(&ps);
 	//system("leaks push_swap");
 	return (0);
@@ -59,10 +52,12 @@ void	init_sort(t_ps *ps)
 	{
 		if (ps->asize == 2)
 			sa(ps, 1);
-		if (ps->asize == 3)
+		else if (ps->asize == 3)
 			sort_three(ps, 1);
-		if (ps->asize > 3)
-			sort_plus_three(ps);
+		else if (ps->asize > 3 && ps->asize <= 5)
+			sort_five(ps);
+		else
+			sort_plus_five(ps);
 	}
 }
 int	init_parse(char **argv, t_ps *ps)
@@ -78,10 +73,8 @@ int	init_parse(char **argv, t_ps *ps)
 void	fill_stack(char **argv, t_ps *ps)
 {
 	int	i;
-	int j;
 
 	i = 0;
-	j = 0;
 	ps->bsize = 0;
 	ps->totalsize = ps->asize;
 	ps->a = malloc(sizeof(long) * ps->totalsize);

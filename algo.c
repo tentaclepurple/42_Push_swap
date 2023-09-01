@@ -44,23 +44,29 @@ void	sort_three(t_ps *ps, int ord)
 	inicia el ordenamiento para mas de 3 numeros.
 	envia los 3 primeros del stack A al B y los ordena de mayor a menor
 */
-void	sort_plus_three(t_ps *ps)
+void	sort_plus_five(t_ps *ps)
 {
 	pb(ps, 1);
 	pb(ps, 1);
 	pb(ps, 1);
-	print_stacks(ps);
+/* 	if (ps->asize == 2)
+		sa(ps, 1); */
+	//print_stacks(ps);
 	sort_three(ps, 0);
-	pb(ps, 1);
 		
-/*	while (ps->asize > 0)
+	while (ps->asize > 0)
 	{
 		//printf("size a %i\n", ps->asize);
+		find_max_min_b(ps);
 		costs_calculus(ps);
 		move_cheapest(ps);
-		//reset_costs_matrix(ps);
+		reset_costs_matrix(ps);
+		//print_stacks(ps);
 	}
-*/	print_stacks(ps);
+	final_order_b(ps);
+	//print_stacks(ps);
+	return_to_a(ps);
+
 }
 
 void	move_cheapest(t_ps *ps)
@@ -68,6 +74,7 @@ void	move_cheapest(t_ps *ps)
 	int	ch;
 
 	ch = get_cheapest(ps);
+	//printf("Moving %i\n", ch);
 	move_cheapest_aux(ps, ch);
 	move_cheapest_aux2(ps, ch);
 	move_cheapest_aux3(ps, ch);

@@ -74,6 +74,11 @@ void	reset_costs_matrix(t_ps *ps)
 	}	
 }
 
+/*
+	    | Total |  rr ra rb | rrr rra rrb | ra rrb | rra  rb  |  pb
+	    |   0   |  1  2  3  |  4   5   6  |  7  8  |  9   10  |  11
+	________________________________________________________________
+*/
 void	costs_fill_raw(t_ps *ps, int src, int dst)
 {
 	ps->costs[src][2] = src;
@@ -85,5 +90,15 @@ void	costs_fill_raw(t_ps *ps, int src, int dst)
 	ps->costs[src][9] = ps->asize - src;
 	ps->costs[src][10] = dst;
 	ps->costs[src][11] = 1;
+	if (src == 0)
+	{
+		ps->costs[src][5] = 0;
+		ps->costs[src][9] = 0;
+	}
+	if (dst == 0)
+	{
+		ps->costs[src][6] = 0;
+		ps->costs[src][8] = 0;
+	}
 }
 

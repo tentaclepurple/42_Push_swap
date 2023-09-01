@@ -19,6 +19,7 @@ void	find_max_min_b(t_ps *ps)
 	i = 0;
 	ps->bmax = ps->b[i];
 	ps->bmin = ps->b[i];
+	ps->bmaxidx = 0;
 	while (i < ps->bsize)
 	{
 		if (ps->b[i] > ps->bmax)

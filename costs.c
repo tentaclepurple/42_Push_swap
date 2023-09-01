@@ -77,19 +77,17 @@ void	costs_final_balance(t_ps *ps, int i)
 int	get_cheapest(t_ps *ps)
 {
 	int	i;
-	int	cheapest;
+	int	j;
 	
-	i = ps->asize - 1;
-	cheapest = ps->costs[i][0];
-	while (i > 0)
+	i = ps->asize - 2;
+	j = ps->asize -1;
+	while (i >= 0)
 	{
-		if (ps->costs[i][0] < cheapest)
+		if (ps->costs[i][0] < ps->costs[j][0])
 		{
-			cheapest = ps->costs[i][0];
-			i--;
+			j = i;
 		}
-		else
-			i--;
+		i--;
 	}
-	return (i);
+	return (j);
 }

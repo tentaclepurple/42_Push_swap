@@ -14,7 +14,7 @@ NAME = 				push_swap
 
 CC = 				gcc
 
-CFLAGS =			-g3 -Wall -Werror -Wextra -fsanitize=address
+CFLAGS =			-g3 -Wall -Werror -Wextra #-fsanitize=address
 
 LIBFT = 			libft.a
 
@@ -27,6 +27,7 @@ SRC_FILES = 		main.c \
 					moves3.c \
 					algo.c \
 					algo2.c \
+					algo3.c \
 					costs.c \
 					costs2.c \
 					costs3.c \
