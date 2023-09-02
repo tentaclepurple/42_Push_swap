@@ -6,7 +6,7 @@
 /*   By: imontero <imontero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 12:50:33 by imontero          #+#    #+#             */
-/*   Updated: 2023/09/01 13:11:07 by imontero         ###   ########.fr       */
+/*   Updated: 2023/09/02 12:20:38 by imontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ void	move_cheapest_aux2(t_ps *ps, int ch)
 		}
 	}
 }
+
 void	move_cheapest_aux3(t_ps *ps, int ch)
 {
 	if (ps->costs[ch][7] > 0)
@@ -100,7 +101,6 @@ void	final_order_b(t_ps *ps)
 	find_max_min_b(ps);
 	while (ps->bmaxidx != 0)
 	{
-
 		if (ps->bmaxidx < (ps->bsize / 2))
 			rb(ps, 1);
 		else

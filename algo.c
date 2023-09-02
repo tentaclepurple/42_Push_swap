@@ -6,7 +6,7 @@
 /*   By: imontero <imontero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 13:49:29 by imontero          #+#    #+#             */
-/*   Updated: 2023/09/01 14:21:48 by imontero         ###   ########.fr       */
+/*   Updated: 2023/09/02 12:19:22 by imontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 void	sort_three(t_ps *ps, int ord)
 {
 	find_max_min_a(ps);
-	//printf("%i, %li", ps->asize, ps->amax);
 	if (ord)
 	{
 		if (ps->a[0] == ps->amax)
@@ -40,8 +39,9 @@ void	sort_three(t_ps *ps, int ord)
 			sb(ps, 1);
 	}
 }
+
 /*
-	inicia el ordenamiento para mas de 3 numeros.
+	inicia el ordenamiento para mas de 5 numeros.
 	envia los 3 primeros del stack A al B y los ordena de mayor a menor
 */
 void	sort_plus_five(t_ps *ps)
@@ -49,24 +49,16 @@ void	sort_plus_five(t_ps *ps)
 	pb(ps, 1);
 	pb(ps, 1);
 	pb(ps, 1);
-/* 	if (ps->asize == 2)
-		sa(ps, 1); */
-	//print_stacks(ps);
 	sort_three(ps, 0);
-		
 	while (ps->asize > 0)
 	{
-		//printf("size a %i\n", ps->asize);
 		find_max_min_b(ps);
 		costs_calculus(ps);
 		move_cheapest(ps);
 		reset_costs_matrix(ps);
-		//print_stacks(ps);
 	}
 	final_order_b(ps);
-	//print_stacks(ps);
 	return_to_a(ps);
-
 }
 
 void	move_cheapest(t_ps *ps)
@@ -74,7 +66,6 @@ void	move_cheapest(t_ps *ps)
 	int	ch;
 
 	ch = get_cheapest(ps);
-	//printf("Moving %i\n", ch);
 	move_cheapest_aux(ps, ch);
 	move_cheapest_aux2(ps, ch);
 	move_cheapest_aux3(ps, ch);

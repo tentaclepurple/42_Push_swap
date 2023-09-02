@@ -6,7 +6,7 @@
 /*   By: imontero <imontero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 10:52:34 by imontero          #+#    #+#             */
-/*   Updated: 2023/09/01 10:48:17 by imontero         ###   ########.fr       */
+/*   Updated: 2023/09/02 11:58:14 by imontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	rr(t_ps *ps, int flag)
 	if (flag)
 	{
 		ft_printf("rr\n");
-		ps->count++;		
+		ps->count++;
 	}
 }
 
@@ -56,10 +56,9 @@ void	rrr(t_ps *ps, int flag)
 		error("Movement error rrr", ps);
 	rra(ps, 0);
 	rrb(ps, 0);
-	if(flag)
+	if (flag)
 	{
-		ft_printf("rrr\n");	
-		ps->count++;	
-	}
-	
+		ft_printf("rrr\n");
+		ps->count++;
+	}	
 }

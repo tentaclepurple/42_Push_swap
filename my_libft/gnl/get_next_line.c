@@ -6,7 +6,7 @@
 /*   By: imontero <imontero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 12:22:29 by imontero          #+#    #+#             */
-/*   Updated: 2023/08/22 16:21:11 by imontero         ###   ########.fr       */
+/*   Updated: 2023/09/02 11:47:07 by imontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ char	*ft_getlinenl(char **store)
 		if ((*store)[i] == '\n')
 		{
 			line = ft_substr_gnl(*store, 0, i + 1);
-			temprest1 = ft_substr_gnl(*store, i + 1, ft_strlen_gnl(*store) - i - 1);
+			temprest1 = ft_substr_gnl(*store, i + 1, \
+			ft_strlen_gnl(*store) - i - 1);
 			free (*store);
 			*store = NULL;
 			*store = ft_substr_gnl(temprest1, 0, ft_strlen_gnl(temprest1));

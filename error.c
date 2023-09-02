@@ -6,7 +6,7 @@
 /*   By: imontero <imontero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 16:54:49 by imontero          #+#    #+#             */
-/*   Updated: 2023/08/31 19:07:32 by imontero         ###   ########.fr       */
+/*   Updated: 2023/09/02 12:29:51 by imontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	error(char *s, t_ps *ps)
 void	free_stacks(t_ps *ps)
 {
 	int	i;
-	
+
 	i = 0;
 	free(ps->a);
 	free(ps->b);

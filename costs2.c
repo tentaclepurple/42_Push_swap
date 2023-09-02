@@ -6,7 +6,7 @@
 /*   By: imontero <imontero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 20:06:04 by imontero          #+#    #+#             */
-/*   Updated: 2023/09/01 10:12:02 by imontero         ###   ########.fr       */
+/*   Updated: 2023/09/02 12:29:25 by imontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	costs_optimization_rrr(t_ps *ps, int i)
 void	reset_costs_matrix(t_ps *ps)
 {
 	int	i;
-	
+
 	i = 0;
 	while (i < ps->totalsize)
 	{
@@ -101,4 +101,3 @@ void	costs_fill_raw(t_ps *ps, int src, int dst)
 		ps->costs[src][8] = 0;
 	}
 }
-

@@ -6,7 +6,7 @@
 /*   By: imontero <imontero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 10:52:34 by imontero          #+#    #+#             */
-/*   Updated: 2023/09/01 13:43:01 by imontero         ###   ########.fr       */
+/*   Updated: 2023/09/02 12:00:42 by imontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,23 +20,23 @@ void	ra(t_ps *ps, int flag)
 {
 	long	tmp;
 	int		i;
-	
+
 	i = 0;
 	if (ps->asize > 1)
 	{
 		tmp = ps->a[i];
-		while (i < ps->asize)
+		while (i < ps->asize - 1)
 		{
 			ps->a[i] = ps->a[i + 1];
 			i++;
 		}
-		ps->a[i - 1] = tmp;
+		ps->a[i] = tmp;
 	}
 	else
 		error("Movement error ra", ps);
 	if (flag)
 	{
-		ft_printf("ra\n");	
+		ft_printf("ra\n");
 		ps->count++;
 	}
 }
@@ -49,24 +49,24 @@ void	rb(t_ps *ps, int flag)
 {
 	long	tmp;
 	int		i;
-	
+
 	i = 0;
 	if (ps->bsize > 1)
 	{
 		tmp = ps->b[i];
-		while (i < ps->bsize)
+		while (i < ps->bsize - 1)
 		{
 			ps->b[i] = ps->b[i + 1];
 			i++;
 		}
-		ps->b[i - 1] = tmp;
+		ps->b[i] = tmp;
 	}
 	else
 		error("Movement error rb", ps);
 	if (flag)
 	{
-			ft_printf("rb\n");	
-			ps->count++;
+		ft_printf("rb\n");
+		ps->count++;
 	}
 }
 
@@ -78,7 +78,7 @@ void	rra(t_ps *ps, int flag)
 {
 	long	tmp;
 	int		n;
-	
+
 	n = ps->asize - 1;
 	if (ps->asize == 0)
 		error("Movement error rra", ps);
@@ -92,7 +92,7 @@ void	rra(t_ps *ps, int flag)
 	if (flag)
 	{
 		ft_printf("rra\n");
-		ps->count++;		
+		ps->count++;
 	}	
 }
 
@@ -104,7 +104,7 @@ void	rrb(t_ps *ps, int flag)
 {
 	long	tmp;
 	int		n;
-	
+
 	n = ps->bsize - 1;
 	if (ps->bsize == 0)
 		error("Movement error rrb", ps);
@@ -117,7 +117,7 @@ void	rrb(t_ps *ps, int flag)
 	ps->b[0] = tmp;
 	if (flag)
 	{
-		ft_printf("rrb\n");	
-		ps->count++;	
+		ft_printf("rrb\n");
+		ps->count++;
 	}
 }

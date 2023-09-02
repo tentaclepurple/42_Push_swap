@@ -6,7 +6,7 @@
 /*   By: imontero <imontero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 13:49:29 by imontero          #+#    #+#             */
-/*   Updated: 2023/09/01 14:18:58 by imontero         ###   ########.fr       */
+/*   Updated: 2023/09/02 12:30:25 by imontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,34 +15,20 @@
 int	main(int argc, char **argv)
 {
 	t_ps	ps;
-	
+
 	ft_memset(&ps, 0, sizeof(struct s_ps));
 	ps.arg_flag = 0;
-	if (argc == 1 || (2 == argc && !argv[1][0]))		
+	if (argc == 1 || (2 == argc && !argv[1][0]))
 		return (ft_printf("\n"));
-	argv++;		
+	argv++;
 	if (argc == 2)
 	{
 		ps.arg_flag = 1;
 		argv = ft_split(argv[0], ' ');
 	}
 	init_parse(argv, &ps);
-	//print_stacks(&ps);
 	init_sort(&ps);
-//	print_stacks(&ps);
-	//printf("%i\n", is_order_b(&ps));
-
-	//printf("Max: %li--- Min: %li", ps.amax, ps.amin);
-	// 2 4 6 8 10 12 14 16 18 20 22
-	// 22 20 18 16 14 12 10 8 6 4 2
-	// 14 16 18 20 22 2 4 6 8 10 12
-	
-	//printf("Max: %li, i: %i --- Min: %li, i: %i\n", ps.bmax, ps.bmaxidx, ps.bmin, ps.bminidx);
-	//printf("target %i\n", find_target_index_in_b(-13, &ps));
-
-	//print_stacks(&ps);
 	free_stacks(&ps);
-	//system("leaks push_swap");
 	return (0);
 }
 
@@ -60,6 +46,7 @@ void	init_sort(t_ps *ps)
 			sort_plus_five(ps);
 	}
 }
+
 int	init_parse(char **argv, t_ps *ps)
 {
 	check_nums(argv, ps);
@@ -94,7 +81,7 @@ void	fill_stack(char **argv, t_ps *ps)
 	}
 }
 
-void	print_stacks(t_ps *ps)
+/*void	print_stacks(t_ps *ps)
 {
 	int	i = -1;
 	int	size;
@@ -138,4 +125,4 @@ void	print_costs_matrix(t_ps *ps)
 		printf("\n");
 		i++;
 	}
-}
+}*/

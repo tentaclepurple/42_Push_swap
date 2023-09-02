@@ -6,7 +6,7 @@
 /*   By: imontero <imontero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 12:22:32 by imontero          #+#    #+#             */
-/*   Updated: 2023/08/22 16:11:07 by imontero         ###   ########.fr       */
+/*   Updated: 2023/09/02 11:45:32 by imontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	j = 0;
-	new = (char *)malloc(sizeof(char) * (ft_strlen_gnl(s1) + ft_strlen_gnl(s2) + 1));
+	new = (char *)malloc(sizeof(char) * (ft_strlen_gnl(s1) \
+	+ ft_strlen_gnl(s2) + 1));
 	if (!new)
 		return (NULL);
 	while (s1[i])
