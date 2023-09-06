@@ -6,21 +6,24 @@
 /*   By: imontero <imontero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 18:51:08 by imontero          #+#    #+#             */
-/*   Updated: 2023/09/02 12:28:57 by imontero         ###   ########.fr       */
+/*   Updated: 2023/09/06 08:31:24 by imontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /* 
-	Recorre el stack A. Consigue el indice que ocuparia en el stack B.
-	Calcula los costes en bruto con las 
-	4 posibilidades ra rb, rra, rrb, ra rrb, rra rb
-	Va rellenando la matriz de costes:
+	Gets the target index for every element in A
+	Calculate raw cost of 4 cases ra rb, rra, rrb, ra rrb, rra rb
+	Fills the costs matrix:
 	
+	    |   0   |   1  2  3 |  4   5   6  |  7  8  |  9   10  |  11
 	    | Total |  rr ra rb | rrr rra rrb | ra rrb | rra  rb  |  pb
-	    |   0   |  1  2  3  |  4   5   6  |  7  8  |  9   10  |  11
 	________________________________________________________________
+		|	0	|   0  2  3	|  0   5   5  |	 2  5  |  5    3  |   1
+		|	0	|   2  0  1	|  5   0   0  |	 2  5  |  5    3  |   1	
+		|	5	|   0  2  3	|  0   0   0  |	 0  0  |  0    0  |   1
+	...
 */
 void	costs_calculus(t_ps *ps)
 {

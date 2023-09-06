@@ -6,7 +6,7 @@
 /*   By: imontero <imontero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 12:50:33 by imontero          #+#    #+#             */
-/*   Updated: 2023/09/02 12:21:14 by imontero         ###   ########.fr       */
+/*   Updated: 2023/09/04 18:01:23 by imontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,11 @@ void	sort_five(t_ps *ps)
 	}
 	sort_three(ps, 1);
 	while (ps->bsize > 0)
+	{
+		if (ps->b[0] < ps->b[1] && ps->bsize > 1)
+			sb(ps, 1);
 		pa(ps, 1);
+	}
 }
 
 void	find_second_min_a(t_ps *ps)

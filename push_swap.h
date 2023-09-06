@@ -6,7 +6,7 @@
 /*   By: imontero <imontero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 13:48:01 by imontero          #+#    #+#             */
-/*   Updated: 2023/09/02 12:14:45 by imontero         ###   ########.fr       */
+/*   Updated: 2023/09/04 18:01:49 by imontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include "my_libft/libft/libft.h"
 # include <stdio.h>
-# include <stdbool.h>
 # include <unistd.h>
 
 typedef struct s_ps
@@ -44,11 +43,6 @@ typedef struct s_ps
 	int		l;
 	int		count;
 }	t_ps;
-
-/* BOOOOOOORRRAAAAARRRRRRR */
-
-void	print_stacks(t_ps *ps);
-void	print_costs_matrix(t_ps *ps);
 
 /* MOVES */
 void	sa(t_ps *ps, int flag);
@@ -111,5 +105,11 @@ void	costs_final_balance_aux_r_rr(t_ps *ps, int i);
 void	costs_final_balance_aux_rr_r(t_ps *ps, int i);
 int		get_cheapest(t_ps *ps);
 void	reset_costs_matrix(t_ps *ps);
+
+/* BONUS */
+
+void	get_moves(t_ps *ps);
+void	do_checker_moves(t_ps *ps, char *line);
+void	error_input(t_ps *ps, char *line);
 
 #endif

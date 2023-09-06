@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imontero <imontero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/20 10:56:11 by imontero          #+#    #+#             */
-/*   Updated: 2023/06/16 13:27:03 by imontero         ###   ########.fr       */
+/*   Created: 2023/09/02 23:12:37 by imontero          #+#    #+#             */
+/*   Updated: 2023/09/02 23:12:37 by imontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-	Busca cierto carácter dentro de una cadena de texto desde delante
-	y devuelve un puntero al caracter encontrado
-*/
-char	*ft_strchr(const char *s, int c)
+int	ft_strcmp(char *s1, char *s2)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
-	while (s[i])
+	while (s1[i] == s2[i] && (s1[i] != 0 || s2[i] != 0))
 	{
-		if (s[i] == (char) c)
-			return (&((char *)s)[i]);
 		i++;
 	}
-	if (s[i] == (char) c)
-		return (&((char *)s)[i]);
-	return (0);
+	return (s1[i] - s2[i]);
 }

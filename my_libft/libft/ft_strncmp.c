@@ -18,7 +18,6 @@
 	str2 > str1 (ASCII) devuelve str1 - str2 (valor positivo)
 	str1 = str2 devuelve 0
 */
-
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t			i;

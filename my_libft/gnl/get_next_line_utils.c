@@ -42,7 +42,7 @@ size_t	ft_strlen_gnl(const char *str)
 	return (i);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin_gnl(char const *s1, char const *s2)
 {
 	char			*new;
 	unsigned int	i;

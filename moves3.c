@@ -6,20 +6,20 @@
 /*   By: imontero <imontero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 10:52:34 by imontero          #+#    #+#             */
-/*   Updated: 2023/09/02 11:58:14 by imontero         ###   ########.fr       */
+/*   Updated: 2023/09/05 11:24:32 by imontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* 	flag recibe 0 o 1 para imprimir el movimiento
-	si no lo imrime es porque hay un movimiento doble
-	que imprimirá su propio movimiento ss, rr, rrr 
+/* 	
+	flag 1 pints the move
+	flag 0 doesn´t
 */
 void	ss(t_ps *ps, int flag)
 {
 	if (ps->asize <= 1 || ps->bsize <= 1)
-		error("Movement error ss", ps);
+		error("KO", ps);
 	sa(ps, 0);
 	sb(ps, 0);
 	if (flag)
@@ -29,14 +29,14 @@ void	ss(t_ps *ps, int flag)
 	}
 }
 
-/* 	flag recibe 0 o 1 para imprimir el movimiento
-	si no lo imrime es porque hay un movimiento doble
-	que imprimirá su propio movimiento ss, rr, rrr 
+/* 	
+	flag 1 pints the move
+	flag 0 doesn´t
 */
 void	rr(t_ps *ps, int flag)
 {
 	if (ps->asize < 2 || ps->bsize < 2)
-		error("Movement error rr", ps);
+		error("KO", ps);
 	ra(ps, 0);
 	rb(ps, 0);
 	if (flag)
@@ -46,14 +46,14 @@ void	rr(t_ps *ps, int flag)
 	}
 }
 
-/* 	flag recibe 0 o 1 para imprimir el movimiento
-	si no lo imrime es porque hay un movimiento doble
-	que imprimirá su propio movimiento ss, rr, rrr 
+/* 	
+	flag 1 pints the move
+	flag 0 doesn´t
 */
 void	rrr(t_ps *ps, int flag)
 {
 	if (ps->asize < 2 || ps->bsize < 2)
-		error("Movement error rrr", ps);
+		error("KO", ps);
 	rra(ps, 0);
 	rrb(ps, 0);
 	if (flag)

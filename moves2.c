@@ -6,15 +6,15 @@
 /*   By: imontero <imontero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 10:52:34 by imontero          #+#    #+#             */
-/*   Updated: 2023/09/02 12:00:42 by imontero         ###   ########.fr       */
+/*   Updated: 2023/09/05 11:24:20 by imontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* 	flag recibe 0 o 1 para imprimir el movimiento
-	si no lo imrime es porque hay un movimiento doble
-	que imprimirá su propio movimiento ss, rr, rrr 
+/* 	
+	flag 1 pints the move
+	flag 0 doesn´t
 */
 void	ra(t_ps *ps, int flag)
 {
@@ -33,7 +33,7 @@ void	ra(t_ps *ps, int flag)
 		ps->a[i] = tmp;
 	}
 	else
-		error("Movement error ra", ps);
+		error("KO", ps);
 	if (flag)
 	{
 		ft_printf("ra\n");
@@ -41,9 +41,9 @@ void	ra(t_ps *ps, int flag)
 	}
 }
 
-/* 	flag recibe 0 o 1 para imprimir el movimiento
-	si no lo imrime es porque hay un movimiento doble
-	que imprimirá su propio movimiento ss, rr, rrr 
+/* 	
+	flag 1 pints the move
+	flag 0 doesn´t
 */
 void	rb(t_ps *ps, int flag)
 {
@@ -62,7 +62,7 @@ void	rb(t_ps *ps, int flag)
 		ps->b[i] = tmp;
 	}
 	else
-		error("Movement error rb", ps);
+		error("KO", ps);
 	if (flag)
 	{
 		ft_printf("rb\n");
@@ -70,9 +70,9 @@ void	rb(t_ps *ps, int flag)
 	}
 }
 
-/* 	flag recibe 0 o 1 para imprimir el movimiento
-	si no lo imrime es porque hay un movimiento doble
-	que imprimirá su propio movimiento ss, rr, rrr 
+/* 	
+	flag 1 pints the move
+	flag 0 doesn´t
 */
 void	rra(t_ps *ps, int flag)
 {
@@ -81,7 +81,7 @@ void	rra(t_ps *ps, int flag)
 
 	n = ps->asize - 1;
 	if (ps->asize == 0)
-		error("Movement error rra", ps);
+		error("KO", ps);
 	tmp = ps->a[n];
 	while (n > 0)
 	{
@@ -96,9 +96,9 @@ void	rra(t_ps *ps, int flag)
 	}	
 }
 
-/* 	flag recibe 0 o 1 para imprimir el movimiento
-	si no lo imrime es porque hay un movimiento doble
-	que imprimirá su propio movimiento ss, rr, rrr 
+/* 	
+	flag 1 pints the move
+	flag 0 doesn´t
 */
 void	rrb(t_ps *ps, int flag)
 {
@@ -107,7 +107,7 @@ void	rrb(t_ps *ps, int flag)
 
 	n = ps->bsize - 1;
 	if (ps->bsize == 0)
-		error("Movement error rrb", ps);
+		error("KO", ps);
 	tmp = ps->b[n];
 	while (n > 0)
 	{

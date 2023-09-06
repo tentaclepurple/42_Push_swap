@@ -6,15 +6,15 @@
 /*   By: imontero <imontero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 13:49:29 by imontero          #+#    #+#             */
-/*   Updated: 2023/09/02 12:19:22 by imontero         ###   ########.fr       */
+/*   Updated: 2023/09/05 11:18:53 by imontero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /* 
-	ord = 1 ordena pila A en orden ascendente
-	ord = 0 ordena pila B en orden descendente
+	ord = 1 order stack A asc order
+	ord = 0 order stack B desc order
 */
 void	sort_three(t_ps *ps, int ord)
 {
@@ -41,8 +41,8 @@ void	sort_three(t_ps *ps, int ord)
 }
 
 /*
-	inicia el ordenamiento para mas de 5 numeros.
-	envia los 3 primeros del stack A al B y los ordena de mayor a menor
+	start sort for > 5 numbers
+	send 3 first from A to B and sorts in desc order
 */
 void	sort_plus_five(t_ps *ps)
 {

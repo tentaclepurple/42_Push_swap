@@ -24,6 +24,7 @@ SRCS		= 	libft/ft_memset.c \
 				libft/ft_strchr.c \
 				libft/ft_strrchr.c \
 				libft/ft_strnstr.c \
+				libft/ft_strcmp.c \
 				libft/ft_strncmp.c \
 				libft/ft_atoi.c \
 				libft/ft_isalpha.c \

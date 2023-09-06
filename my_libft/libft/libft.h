@@ -58,6 +58,7 @@ int		ft_isprint(int c);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 int		ft_toupper(int c);
 int		ft_tolower(int c);
+int		ft_strcmp(char *s1, char *s2);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 long	ft_atoi(const char *str);
 char	*ft_itoa(int n);
